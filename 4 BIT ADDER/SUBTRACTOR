@@ -1,0 +1,30 @@
+4 BIT ADDER/SUBTRACTOR module Add_Sub(a, b, m, c);
+input [3:0] a, b;
+input m;
+output reg [4:0] c;
+always @(a, b, m)
+begin if(m == 0) 
+  c = a + b;
+  else 
+  c = a - b;
+end endmodule
+############## Test Fixture ##################
+BINARYsub uut ( 
+  .A(A),  
+  .B(B),  
+  .C(C) 
+); 
+initial begin 
+  A = 4'b0001; 
+  B = 4'b0001; 
+  #100; 
+  A = 4'b0011; 
+  B = 4'b0011; 
+  #100; 
+  A = 4'b0101; 
+  B = 4'b0001; 
+  #100; 
+  A = 4'b0101; 
+  B = 4'b1001; 
+  #100; 
+End
