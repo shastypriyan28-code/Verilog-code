@@ -1,0 +1,23 @@
+module BINARYADD(A,B,C);
+input[3:0]A,B;
+output[3:0]C;
+assign C=A+B;
+endmodule 
+
+############# test-fixture ################
+
+BINARYADD uut ( .A(A),  .B(B),  .C(C) );
+initial begin 
+  A = 4'b0001;
+  B = 4'b0001;
+  #100;
+  A = 4'b0011;
+  B = 4'b0011;
+  #100;
+  A = 4'b0101;
+  B = 4'b0001;
+  #100;
+  A = 4'b0101;
+  B = 4'b1001;
+  #100;
+  End 
